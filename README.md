@@ -154,6 +154,22 @@ Not(s) or inverts a and returns a new bit array.
 proc `not`(a: BitArray2d): BitArray2d
 ```
 
+## **proc** `==`
+
+Are two bit arrays the same.
+
+```nim
+proc `==`(a, b: BitArray2d): bool
+```
+
+## **proc** hash
+
+Computes a Hash for the bit array.
+
+```nim
+proc hash(b: BitArray2d): Hash
+```
+
 ## **proc** `$`
 
 Turns the bit array into a string.

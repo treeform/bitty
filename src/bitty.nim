@@ -133,6 +133,18 @@ proc `not`*(a: BitArray2d): BitArray2d =
   result.bits = not a.bits
   result.stride = a.stride
 
+proc `==`*(a, b: BitArray2d): bool =
+  ## Are two bit arrays the same.
+  a.stride == b.stride and b.bits == a.bits
+
+proc hash*(b: BitArray2d): Hash =
+  ## Computes a Hash for the bit array.
+  var h: Hash = 0
+  h = h !& hash(b.bits)
+  h = h !& hash(b.bits.len)
+  h = h !& hash(b.stride)
+  !$h
+
 proc `$`*(b: BitArray2d): string =
   ## Turns the bit array into a string.
   result = newStringOfCap(b.bits.len)
