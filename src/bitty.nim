@@ -16,6 +16,11 @@ proc newBitArray*(len: int = 0): BitArray =
   result.len = len
   result.bits = newSeq[uint64](len.divUp(64))
 
+proc setLen*(b: var BitArray, len: int) =
+  ## Sets the length.
+  b.len = len
+  b.bits.setLen(len.divUp(64))
+
 proc `[]`*(b: BitArray, i: int): bool =
   ## Access a single bit.
   if i < 0 or i >= b.len:
@@ -97,6 +102,14 @@ proc hash*(b: BitArray): Hash =
   h = h !& hash(b.bits)
   h = h !& hash(b.len)
   !$h
+
+iterator items*(b: BitArray): bool =
+  for i in 0 ..< b.len:
+    yield b[i]
+
+iterator pairs*(b: BitArray): (int, bool) =
+  for i in 0 ..< b.len:
+    yield (i, b[i])
 
 type BitArray2d* = ref object
     ## Creates an array of bits all packed in together.
