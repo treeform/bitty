@@ -1,9 +1,9 @@
 import hashes
 
 type BitArray* = ref object
-    ## Creates an array of bits all packed in together.
-    bits: seq[uint64]
-    len*: int
+  ## Creates an array of bits all packed in together.
+  bits: seq[uint64]
+  len*: int
 
 func divUp(a, b: int): int =
   ## Like div, but rounds up instead of down.
@@ -98,10 +98,7 @@ proc add*(b: BitArray, v: bool) =
 
 proc hash*(b: BitArray): Hash =
   ## Computes a Hash for the bit array.
-  var h: Hash = 0
-  h = h !& hash(b.bits)
-  h = h !& hash(b.len)
-  !$h
+  hash((b.bits, b.len))
 
 iterator items*(b: BitArray): bool =
   for i in 0 ..< b.len:
@@ -112,9 +109,9 @@ iterator pairs*(b: BitArray): (int, bool) =
     yield (i, b[i])
 
 type BitArray2d* = ref object
-    ## Creates an array of bits all packed in together.
-    bits: BitArray
-    stride: int
+  ## Creates an array of bits all packed in together.
+  bits: BitArray
+  stride: int
 
 proc newBitArray2d*(stride, len: int): BitArray2d =
   ## Create a new bit array.
@@ -152,11 +149,7 @@ proc `==`*(a, b: BitArray2d): bool =
 
 proc hash*(b: BitArray2d): Hash =
   ## Computes a Hash for the bit array.
-  var h: Hash = 0
-  h = h !& hash(b.bits)
-  h = h !& hash(b.bits.len)
-  h = h !& hash(b.stride)
-  !$h
+  hash((b.bits, b.bits.len, b.stride))
 
 proc `$`*(b: BitArray2d): string =
   ## Turns the bit array into a string.
