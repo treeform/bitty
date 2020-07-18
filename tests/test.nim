@@ -9,6 +9,15 @@ block:
   assert a[1] == false
 
 block:
+  var a = newBitArray(4)
+  a[0] = true
+  a[1] = true
+  a[0] = false
+  assert $a == "0100"
+  assert a[0] == false
+  assert a[1] == true
+
+block:
   var a = newBitArray(64)
   a[0] = true
   a[63] = true

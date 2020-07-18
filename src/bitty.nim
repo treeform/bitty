@@ -16,7 +16,7 @@ proc newBitArray*(len: int = 0): BitArray =
   result.len = len
   result.bits = newSeq[uint64](len.divUp(64))
 
-proc setLen*(b: var BitArray, len: int) =
+proc setLen*(b: BitArray, len: int) =
   ## Sets the length.
   b.len = len
   b.bits.setLen(len.divUp(64))
@@ -29,8 +29,7 @@ proc `[]`*(b: BitArray, i: int): bool =
     bigAt = i div 64
     littleAt = i mod 64
     mask = 1.uint64 shl littleAt
-    r = b.bits[bigAt]
-  return (r and mask) != 0
+  return (b.bits[bigAt] and mask) != 0
 
 proc `[]=`*(b: BitArray, i: int, v: bool) =
   ## Set a single bit.
@@ -40,7 +39,10 @@ proc `[]=`*(b: BitArray, i: int, v: bool) =
     bigAt = i div 64
     littleAt = i mod 64
     mask = 1.uint64 shl littleAt
-  b.bits[bigAt] = b.bits[bigAt] or mask
+  if v:
+    b.bits[bigAt] = b.bits[bigAt] or mask
+  else:
+    b.bits[bigAt] = b.bits[bigAt] and (not mask)
 
 proc `==`*(a, b: BitArray): bool =
   ## Are two bit arrays the same.
