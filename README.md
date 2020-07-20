@@ -12,89 +12,110 @@ Creates an array of bits all packed in together.
 
 ```nim
 BitArray = ref object
-  bits: seq[uint64]
-  len*: int
-
+ bits: seq[uint64]
+ len*: int
 ```
 
-## **proc** newBitArray
+## **func** newBitArray
 
 Create a new bit array.
 
 ```nim
-proc newBitArray(len: int = 0): BitArray
+func newBitArray(len: int = 0): BitArray
 ```
 
-## **proc** `[]`
+## **func** setLen
+
+Sets the length.
+
+```nim
+func setLen(b: BitArray; len: int)
+```
+
+## **func** `[]`
 
 Access a single bit.
 
 ```nim
-proc `[]`(b: BitArray; i: int): bool {.raises: [IndexError].}
+func `[]`(b: BitArray; i: int): bool {.raises: [IndexError].}
 ```
 
-## **proc** `[]=`
+## **func** `[]=`
 
 Set a single bit.
 
 ```nim
-proc `[]=`(b: BitArray; i: int; v: bool) {.raises: [IndexError].}
+func `[]=`(b: BitArray; i: int; v: bool) {.raises: [IndexError].}
 ```
 
-## **proc** `==`
+## **func** `==`
 
 Are two bit arrays the same.
 
 ```nim
-proc `==`(a, b: BitArray): bool
+func `==`(a, b: BitArray): bool
 ```
 
-## **proc** `and`
+## **func** `and`
 
 And(s) two bit arrays returning a new bit array.
 
 ```nim
-proc `and`(a, b: BitArray): BitArray {.raises: [ValueError].}
+func `and`(a, b: BitArray): BitArray {.raises: [ValueError].}
 ```
 
-## **proc** `or`
+## **func** `or`
 
 Or(s) two bit arrays returning a new bit array.
 
 ```nim
-proc `or`(a, b: BitArray): BitArray {.raises: [ValueError].}
+func `or`(a, b: BitArray): BitArray {.raises: [ValueError].}
 ```
 
-## **proc** `not`
+## **func** `not`
 
 Not(s) or inverts a and returns a new bit array.
 
 ```nim
-proc `not`(a: BitArray): BitArray
+func `not`(a: BitArray): BitArray
 ```
 
-## **proc** `$`
+## **func** `$`
 
 Turns the bit array into a string.
 
 ```nim
-proc `$`(b: BitArray): string {.raises: [IndexError].}
+func `$`(b: BitArray): string {.raises: [IndexError].}
 ```
 
-## **proc** add
+## **func** add
 
 Add a bit to the end of the array.
 
 ```nim
-proc add(b: BitArray; v: bool)
+func add(b: BitArray; v: bool)
 ```
 
-## **proc** hash
+## **func** hash
 
 Computes a Hash for the bit array.
 
 ```nim
-proc hash(b: BitArray): Hash
+func hash(b: BitArray): Hash
+```
+
+## **iterator** items
+
+
+```nim
+iterator items(b: BitArray): bool {.raises: [IndexError].}
+```
+
+## **iterator** pairs
+
+
+```nim
+iterator pairs(b: BitArray): (int, bool) {.raises: [IndexError].}
 ```
 
 ## **type** BitArray2d
@@ -103,77 +124,76 @@ Creates an array of bits all packed in together.
 
 ```nim
 BitArray2d = ref object
-  bits: BitArray
-  stride: int
-
+ bits: BitArray
+ stride: int
 ```
 
-## **proc** newBitArray2d
+## **func** newBitArray2d
 
 Create a new bit array.
 
 ```nim
-proc newBitArray2d(stride, len: int): BitArray2d
+func newBitArray2d(stride, len: int): BitArray2d
 ```
 
-## **proc** `[]`
+## **func** `[]`
 
 
 ```nim
-proc `[]`(b: BitArray2d; x, y: int): bool {.raises: [IndexError].}
+func `[]`(b: BitArray2d; x, y: int): bool {.raises: [IndexError].}
 ```
 
-## **proc** `[]=`
+## **func** `[]=`
 
 
 ```nim
-proc `[]=`(b: BitArray2d; x, y: int; v: bool) {.raises: [IndexError].}
+func `[]=`(b: BitArray2d; x, y: int; v: bool) {.raises: [IndexError].}
 ```
 
-## **proc** `and`
+## **func** `and`
 
 And(s) two bit arrays returning a new bit array.
 
 ```nim
-proc `and`(a, b: BitArray2d): BitArray2d {.raises: [ValueError].}
+func `and`(a, b: BitArray2d): BitArray2d {.raises: [ValueError].}
 ```
 
-## **proc** `or`
+## **func** `or`
 
 Or(s) two bit arrays returning a new bit array.
 
 ```nim
-proc `or`(a, b: BitArray2d): BitArray2d {.raises: [ValueError].}
+func `or`(a, b: BitArray2d): BitArray2d {.raises: [ValueError].}
 ```
 
-## **proc** `not`
+## **func** `not`
 
 Not(s) or inverts a and returns a new bit array.
 
 ```nim
-proc `not`(a: BitArray2d): BitArray2d
+func `not`(a: BitArray2d): BitArray2d
 ```
 
-## **proc** `==`
+## **func** `==`
 
 Are two bit arrays the same.
 
 ```nim
-proc `==`(a, b: BitArray2d): bool
+func `==`(a, b: BitArray2d): bool
 ```
 
-## **proc** hash
+## **func** hash
 
 Computes a Hash for the bit array.
 
 ```nim
-proc hash(b: BitArray2d): Hash
+func hash(b: BitArray2d): Hash
 ```
 
-## **proc** `$`
+## **func** `$`
 
 Turns the bit array into a string.
 
 ```nim
-proc `$`(b: BitArray2d): string {.raises: [IndexError].}
+func `$`(b: BitArray2d): string {.raises: [IndexError].}
 ```
