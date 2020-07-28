@@ -1,4 +1,4 @@
-import hashes
+import hashes, bitops
 
 type BitArray* = ref object
   ## Creates an array of bits all packed in together.
@@ -97,6 +97,11 @@ func add*(b: BitArray, v: bool) =
       littleAt = i mod 64
       mask = 1.uint64 shl littleAt
     b.bits[bigAt] = b.bits[bigAt] or mask
+
+func count*(b: BitArray): int =
+  ## Returns the number of bits set.
+  for i in 0 ..< b.bits.len:
+    result += countSetBits(b.bits[i])
 
 func hash*(b: BitArray): Hash =
   ## Computes a Hash for the bit array.

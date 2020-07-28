@@ -83,6 +83,13 @@ block:
   assert $(not a) == "0101"
 
 block:
+  var a = newBitArray()
+  let c = 1_000
+  for _ in 0 ..< c:
+    a.add true
+  assert a.count() == c
+
+block:
   var a = newBitArray2d(5, 5)
   a[1, 1] = true
   a[2, 2] = true
@@ -121,6 +128,7 @@ block:
   11
 ]
 """
+
 block:
   var a = newBitArray2d(5, 5)
   a[1, 1] = true
