@@ -24,6 +24,7 @@ func setLen*(b: BitArray, len: int) =
 {.push checks: off.}
 
 func unsafeGet*(b: BitArray, i: int): bool =
+  ## Access a single bit (unchecked).
   let
     bigAt = i div 64
     littleAt = i mod 64
@@ -31,6 +32,7 @@ func unsafeGet*(b: BitArray, i: int): bool =
   return (b.bits[bigAt] and mask) != 0
 
 func unsafeSetFalse*(b: BitArray, i: int) =
+  ## Set a single bit to false (unchecked).
   let
     bigAt = i div 64
     littleAt = i mod 64
@@ -38,6 +40,7 @@ func unsafeSetFalse*(b: BitArray, i: int) =
   b.bits[bigAt] = b.bits[bigAt] and (not mask)
 
 func unsafeSetTrue*(b: BitArray, i: int) =
+  ## Set a single bit to true (unchecked).
   let
     bigAt = i div 64
     littleAt = i mod 64
