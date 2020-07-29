@@ -21,28 +21,45 @@ func setLen*(b: BitArray, len: int) =
   b.len = len
   b.bits.setLen(len.divUp(64))
 
-func `[]`*(b: BitArray, i: int): bool =
-  ## Access a single bit.
-  if i < 0 or i >= b.len:
-    raise newException(IndexError, "index out of bounds")
+{.push checks: off.}
+
+func unsafeGet*(b: BitArray, i: int): bool =
   let
     bigAt = i div 64
     littleAt = i mod 64
     mask = 1.uint64 shl littleAt
   return (b.bits[bigAt] and mask) != 0
 
-func `[]=`*(b: BitArray, i: int, v: bool) =
-  ## Set a single bit.
-  if i < 0 or i >= b.len:
-    raise newException(IndexError, "index out of bounds")
+func unsafeSetFalse*(b: BitArray, i: int) =
   let
     bigAt = i div 64
     littleAt = i mod 64
     mask = 1.uint64 shl littleAt
+  b.bits[bigAt] = b.bits[bigAt] and (not mask)
+
+func unsafeSetTrue*(b: BitArray, i: int) =
+  let
+    bigAt = i div 64
+    littleAt = i mod 64
+    mask = 1.uint64 shl littleAt
+  b.bits[bigAt] = b.bits[bigAt] or mask
+
+{.pop.}
+
+func `[]`*(b: BitArray, i: int): bool =
+  ## Access a single bit.
+  if i < 0 or i >= b.len:
+    raise newException(IndexError, "index out of bounds")
+  b.unsafeGet(i)
+
+func `[]=`*(b: BitArray, i: int, v: bool) =
+  # Set a single bit.
+  if i < 0 or i >= b.len:
+    raise newException(IndexError, "index out of bounds")
   if v:
-    b.bits[bigAt] = b.bits[bigAt] or mask
+    b.unsafeSetTrue(i)
   else:
-    b.bits[bigAt] = b.bits[bigAt] and (not mask)
+    b.unsafeSetFalse(i)
 
 func `==`*(a, b: BitArray): bool =
   ## Are two bit arrays the same.
