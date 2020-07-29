@@ -88,6 +88,8 @@ block:
   for _ in 0 ..< c:
     a.add true
   assert a.count() == c
+  a.clear()
+  assert a.count() == 0
 
 block:
   var a = newBitArray2d(5, 5)

@@ -103,6 +103,11 @@ func count*(b: BitArray): int =
   for i in 0 ..< b.bits.len:
     result += countSetBits(b.bits[i])
 
+func clear*(b: BitArray) =
+  ## Unsets all of the bits.
+  for i in 0 ..< b.bits.len:
+    b.bits[i] = 0
+
 func hash*(b: BitArray): Hash =
   ## Computes a Hash for the bit array.
   hash((b.bits, b.len))
