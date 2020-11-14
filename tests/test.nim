@@ -41,7 +41,10 @@ block:
   a.add false
   a.add true
   a.add false
-  assert a.hash() == -4445816759453838206
+  var b = newBitArray()
+  b.add false
+  b.add true
+  assert a.hash() != b.hash()
 
 block:
   var a = newBitArray(4)
