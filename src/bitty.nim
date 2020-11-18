@@ -21,7 +21,8 @@ func setLen*(b: BitArray, len: int) =
   b.len = len
   b.bits.setLen(len.divUp(64))
 
-{.push checks: off.}
+when defined(release):
+  {.push checks: off.}
 
 func unsafeGet*(b: BitArray, i: int): bool =
   ## Access a single bit (unchecked).
@@ -47,18 +48,19 @@ func unsafeSetTrue*(b: BitArray, i: int) =
     mask = 1.uint64 shl littleAt
   b.bits[bigAt] = b.bits[bigAt] or mask
 
-{.pop.}
+when defined(release):
+  {.pop.}
 
 func `[]`*(b: BitArray, i: int): bool =
   ## Access a single bit.
   if i < 0 or i >= b.len:
-    raise newException(IndexError, "index out of bounds")
+    raise newException(IndexDefect, "Index out of bounds")
   b.unsafeGet(i)
 
 func `[]=`*(b: BitArray, i: int, v: bool) =
   # Set a single bit.
   if i < 0 or i >= b.len:
-    raise newException(IndexError, "index out of bounds")
+    raise newException(IndexDefect, "Index out of bounds")
   if v:
     b.unsafeSetTrue(i)
   else:
@@ -76,7 +78,7 @@ func `==`*(a, b: BitArray): bool =
 func `and`*(a, b: BitArray): BitArray =
   ## And(s) two bit arrays returning a new bit array.
   if a.len != b.len:
-    raise newException(ValueError, "two bit arrays are not same length")
+    raise newException(ValueError, "Bit arrays are not same length")
   result = newBitArray(a.len)
   for i in 0 ..< a.bits.len:
     result.bits[i] = a.bits[i] and b.bits[i]
@@ -84,7 +86,7 @@ func `and`*(a, b: BitArray): BitArray =
 func `or`*(a, b: BitArray): BitArray =
   ## Or(s) two bit arrays returning a new bit array.
   if a.len != b.len:
-    raise newException(ValueError, "two bit arrays are not same length")
+    raise newException(ValueError, "Bit arrays are not same length")
   result = newBitArray(a.len)
   for i in 0 ..< a.bits.len:
     result.bits[i] = a.bits[i] or b.bits[i]
