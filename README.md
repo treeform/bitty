@@ -6,7 +6,9 @@
 
 [API reference](https://nimdocs.com/treeform/bitty)
 
-No dependencies, this is a pure nim library.
+This library has no dependencies other than the Nim standard libarary.
+
+## About
 
 This library gives you 1d and 2d bit arrays and operations to perform on them.
 
