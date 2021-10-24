@@ -68,7 +68,7 @@ func `[]=`*(b: BitArray, i: int, v: bool) =
 
 func `==`*(a, b: BitArray): bool =
   ## Are two bit arrays the same.
-  if a.len != b.len:
+  if b.isNil or a.len != b.len:
     return false
   for i in 0 ..< a.bits.len:
     if a.bits[i] != b.bits[i]:
