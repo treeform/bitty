@@ -1,4 +1,4 @@
-version     = "0.1.2"
+version     = "0.1.3"
 author      = "Andre von Houck"
 description = "Utilities with dealing with 1d and 2d bit arrays."
 license     = "MIT"
