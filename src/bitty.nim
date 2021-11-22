@@ -24,6 +24,15 @@ func setLen*(b: BitArray, len: int) =
 when defined(release):
   {.push checks: off.}
 
+func firstFalse*(b: BitArray): (bool, int) =
+  for i in 0 ..< b.bits.len:
+    if b.bits[i] == 0:
+      return (true, i * 64)
+    if b.bits[i] != uint64.high:
+      let matchingBits = countLeadingZeroBits(b.bits[i])
+      return (true, i * 64 + 64 - matchingBits)
+  (false, 0)
+
 func unsafeGet*(b: BitArray, i: int): bool =
   ## Access a single bit (unchecked).
   let
