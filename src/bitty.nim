@@ -57,7 +57,7 @@ func unsafeSetTrue*(b: BitArray, i: int) =
     mask = 1.uint64 shl littleAt
   b.bits[bigAt] = b.bits[bigAt] or mask
 
-iterator trues*(b: BitArray): int =
+iterator trueIndexes*(b: BitArray): int =
   var j: int
   for i, bits in b.bits:
     if bits == 0:
