@@ -25,11 +25,11 @@ when defined(release):
   {.push checks: off.}
 
 func firstFalse*(b: BitArray): (bool, int) =
-  for i in 0 ..< b.bits.len:
-    if b.bits[i] == 0:
+  for i, bits in b.bits:
+    if bits == 0:
       return (true, i * 64)
-    if b.bits[i] != uint64.high:
-      let matchingBits = firstSetBit(not b.bits[i])
+    if bits != uint64.high:
+      let matchingBits = firstSetBit(not bits)
       return (true, i * 64 + matchingBits - 1)
   (false, 0)
 
@@ -56,6 +56,19 @@ func unsafeSetTrue*(b: BitArray, i: int) =
     littleAt = i mod 64
     mask = 1.uint64 shl littleAt
   b.bits[bigAt] = b.bits[bigAt] or mask
+
+iterator trueIndexes*(b: BitArray): int =
+  var j: int
+  for i, bits in b.bits:
+    if bits == 0:
+      continue
+    j = 0
+    while j < 64:
+      let v = bits and (uint64.high shl j)
+      if v == 0:
+        break
+      j = firstSetBit(v)
+      yield i * 64 + j - 1
 
 when defined(release):
   {.pop.}
@@ -110,7 +123,7 @@ func `$`*(b: BitArray): string =
   ## Turns the bit array into a string.
   result = newStringOfCap(b.len)
   for i in 0 ..< b.len:
-    if b[i]:
+    if b.unsafeGet(i):
       result.add "1"
     else:
       result.add "0"
@@ -145,11 +158,11 @@ func hash*(b: BitArray): Hash =
 
 iterator items*(b: BitArray): bool =
   for i in 0 ..< b.len:
-    yield b[i]
+    yield b.unsafeGet(i)
 
 iterator pairs*(b: BitArray): (int, bool) =
   for i in 0 ..< b.len:
-    yield (i, b[i])
+    yield (i, b.unsafeGet(i))
 
 type BitArray2d* = ref object
   ## Creates an array of bits all packed in together.
