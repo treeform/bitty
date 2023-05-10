@@ -1,0 +1,31 @@
+BitArray	bitty.html#BitArray	bitty: BitArray	
+newBitArray	bitty.html#newBitArray,int	bitty: newBitArray(len: int = 0): BitArray	
+setLen	bitty.html#setLen,BitArray,int	bitty: setLen(b: BitArray; len: int)	
+firstFalse	bitty.html#firstFalse,BitArray	bitty: firstFalse(b: BitArray): (bool, int)	
+unsafeGet	bitty.html#unsafeGet,BitArray,int	bitty: unsafeGet(b: BitArray; i: int): bool	
+unsafeSetFalse	bitty.html#unsafeSetFalse,BitArray,int	bitty: unsafeSetFalse(b: BitArray; i: int)	
+unsafeSetTrue	bitty.html#unsafeSetTrue,BitArray,int	bitty: unsafeSetTrue(b: BitArray; i: int)	
+trueIndexes	bitty.html#trueIndexes.i,BitArray	bitty: trueIndexes(b: BitArray): int	
+`[]`	bitty.html#[],BitArray,int	bitty: `[]`(b: BitArray; i: int): bool	
+`[]=`	bitty.html#[]=,BitArray,int,bool	bitty: `[]=`(b: BitArray; i: int; v: bool)	
+`==`	bitty.html#==,BitArray,BitArray	bitty: `==`(a, b: BitArray): bool	
+`and`	bitty.html#and,BitArray,BitArray	bitty: `and`(a, b: BitArray): BitArray	
+`or`	bitty.html#or,BitArray,BitArray	bitty: `or`(a, b: BitArray): BitArray	
+`not`	bitty.html#not,BitArray	bitty: `not`(a: BitArray): BitArray	
+`$`	bitty.html#$,BitArray	bitty: `$`(b: BitArray): string	
+add	bitty.html#add,BitArray,bool	bitty: add(b: BitArray; v: bool)	
+count	bitty.html#count,BitArray	bitty: count(b: BitArray): int	
+clear	bitty.html#clear,BitArray	bitty: clear(b: BitArray)	
+hash	bitty.html#hash,BitArray	bitty: hash(b: BitArray): Hash	
+items	bitty.html#items.i,BitArray	bitty: items(b: BitArray): bool	
+pairs	bitty.html#pairs.i,BitArray	bitty: pairs(b: BitArray): (int, bool)	
+BitArray2d	bitty.html#BitArray2d	bitty: BitArray2d	
+newBitArray2d	bitty.html#newBitArray2d,int,int	bitty: newBitArray2d(stride, len: int): BitArray2d	
+`[]`	bitty.html#[],BitArray2d,int,int	bitty: `[]`(b: BitArray2d; x, y: int): bool	
+`[]=`	bitty.html#[]=,BitArray2d,int,int,bool	bitty: `[]=`(b: BitArray2d; x, y: int; v: bool)	
+`and`	bitty.html#and,BitArray2d,BitArray2d	bitty: `and`(a, b: BitArray2d): BitArray2d	
+`or`	bitty.html#or,BitArray2d,BitArray2d	bitty: `or`(a, b: BitArray2d): BitArray2d	
+`not`	bitty.html#not,BitArray2d	bitty: `not`(a: BitArray2d): BitArray2d	
+`==`	bitty.html#==,BitArray2d,BitArray2d	bitty: `==`(a, b: BitArray2d): bool	
+hash	bitty.html#hash,BitArray2d	bitty: hash(b: BitArray2d): Hash	
+`$`	bitty.html#$,BitArray2d	bitty: `$`(b: BitArray2d): string	
