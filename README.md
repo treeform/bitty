@@ -12,4 +12,4 @@ This library has no dependencies other than the Nim standard library.
 
 This library gives you 1d and 2d bit arrays and operations to perform on them.
 
-If you have type like `seq[bool]` in your code, switching to bit arrays should improve your memory usage by 8x. Using tightly packed bit arrays can also improve cache performance if you are doing a lot of sequential or read access on a large amount of bits. But tightly packed bit arrays can also be slower if you are doing a lot of random write access. Always measure!
+If you have type like `seq[bool]` in your code, switching to bit arrays should improve your memory usage by 8x. Using tightly packed bit arrays can also improve cache performance if you are doing a lot of sequential read access on a large amount of bits. But tightly packed bit arrays can also be slower if you are doing a lot of random write access. Always measure!
