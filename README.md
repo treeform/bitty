@@ -1,6 +1,7 @@
 # Bitty - Tightly packed 1d and 2d bit arrays.
 
-`nimble install bitty`
+* `atlas use bitty`
+* `nimble install bitty`
 
 ![Github Actions](https://github.com/treeform/bitty/workflows/Github%20Actions/badge.svg)
 
