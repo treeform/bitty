@@ -30,11 +30,11 @@ nim	`not`	bitty.html#not,BitArray2d	proc `not`(a: BitArray2d): BitArray2d		196
 nim	`==`	bitty.html#==,BitArray2d,BitArray2d	proc `==`(a, b: BitArray2d): bool		202
 nim	hash	bitty.html#hash,BitArray2d	proc hash(b: BitArray2d): Hash		206
 nim	`$`	bitty.html#$,BitArray2d	proc `$`(b: BitArray2d): string		210
+nimgrp	==	bitty.html#==-procs-all	proc		91
+nimgrp	and	bitty.html#and-procs-all	proc		100
 nimgrp	$	bitty.html#$-procs-all	proc		122
 nimgrp	[]=	bitty.html#[]=-procs-all	proc		82
-nimgrp	and	bitty.html#and-procs-all	proc		100
-nimgrp	or	bitty.html#or-procs-all	proc		108
-nimgrp	not	bitty.html#not-procs-all	proc		116
-nimgrp	==	bitty.html#==-procs-all	proc		91
 nimgrp	[]	bitty.html#[]-procs-all	proc		76
+nimgrp	not	bitty.html#not-procs-all	proc		116
+nimgrp	or	bitty.html#or-procs-all	proc		108
 nimgrp	hash	bitty.html#hash-procs-all	proc		155
