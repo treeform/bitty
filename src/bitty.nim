@@ -30,7 +30,10 @@ func firstFalse*(b: BitArray): (bool, int) =
       return (true, i * 64)
     if bits != uint64.high:
       let matchingBits = firstSetBit(not bits)
-      return (true, i * 64 + matchingBits - 1)
+      let index = i * 64 + matchingBits - 1
+      if index >= b.len:
+        return (false, 0)
+      return (true, index)
   (false, 0)
 
 func unsafeGet*(b: BitArray, i: int): bool =
