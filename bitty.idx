@@ -3,38 +3,38 @@ nim	BitArray	bitty.html#BitArray	type BitArray		3
 nim	newBitArray	bitty.html#newBitArray,int	proc newBitArray(len: int = 0): BitArray		13
 nim	setLen	bitty.html#setLen,BitArray,int	proc setLen(b: BitArray; len: int)		19
 nim	firstFalse	bitty.html#firstFalse,BitArray	proc firstFalse(b: BitArray): (bool, int)		27
-nim	unsafeGet	bitty.html#unsafeGet,BitArray,int	proc unsafeGet(b: BitArray; i: int): bool		36
-nim	unsafeSetFalse	bitty.html#unsafeSetFalse,BitArray,int	proc unsafeSetFalse(b: BitArray; i: int)		44
-nim	unsafeSetTrue	bitty.html#unsafeSetTrue,BitArray,int	proc unsafeSetTrue(b: BitArray; i: int)		52
-nim	trueIndexes	bitty.html#trueIndexes.i,BitArray	iterator trueIndexes(b: BitArray): int		60
-nim	`[]`	bitty.html#[],BitArray,int	proc `[]`(b: BitArray; i: int): bool		76
-nim	`[]=`	bitty.html#[]=,BitArray,int,bool	proc `[]=`(b: BitArray; i: int; v: bool)		82
-nim	`==`	bitty.html#==,BitArray,BitArray	proc `==`(a, b: BitArray): bool		91
-nim	`and`	bitty.html#and,BitArray,BitArray	proc `and`(a, b: BitArray): BitArray		100
-nim	`or`	bitty.html#or,BitArray,BitArray	proc `or`(a, b: BitArray): BitArray		108
-nim	`not`	bitty.html#not,BitArray	proc `not`(a: BitArray): BitArray		116
-nim	`$`	bitty.html#$,BitArray	proc `$`(b: BitArray): string		122
-nim	add	bitty.html#add,BitArray,bool	proc add(b: BitArray; v: bool)		131
-nim	count	bitty.html#count,BitArray	proc count(b: BitArray): int		145
-nim	clear	bitty.html#clear,BitArray	proc clear(b: BitArray)		150
-nim	hash	bitty.html#hash,BitArray	proc hash(b: BitArray): Hash		155
-nim	items	bitty.html#items.i,BitArray	iterator items(b: BitArray): bool		159
-nim	pairs	bitty.html#pairs.i,BitArray	iterator pairs(b: BitArray): (int, bool)		163
-nim	BitArray2d	bitty.html#BitArray2d	type BitArray2d		167
-nim	newBitArray2d	bitty.html#newBitArray2d,int,int	proc newBitArray2d(stride, len: int): BitArray2d		172
-nim	`[]`	bitty.html#[],BitArray2d,int,int	proc `[]`(b: BitArray2d; x, y: int): bool		178
-nim	`[]=`	bitty.html#[]=,BitArray2d,int,int,bool	proc `[]=`(b: BitArray2d; x, y: int; v: bool)		181
-nim	`and`	bitty.html#and,BitArray2d,BitArray2d	proc `and`(a, b: BitArray2d): BitArray2d		184
-nim	`or`	bitty.html#or,BitArray2d,BitArray2d	proc `or`(a, b: BitArray2d): BitArray2d		190
-nim	`not`	bitty.html#not,BitArray2d	proc `not`(a: BitArray2d): BitArray2d		196
-nim	`==`	bitty.html#==,BitArray2d,BitArray2d	proc `==`(a, b: BitArray2d): bool		202
-nim	hash	bitty.html#hash,BitArray2d	proc hash(b: BitArray2d): Hash		206
-nim	`$`	bitty.html#$,BitArray2d	proc `$`(b: BitArray2d): string		210
-nimgrp	==	bitty.html#==-procs-all	proc		91
-nimgrp	and	bitty.html#and-procs-all	proc		100
-nimgrp	$	bitty.html#$-procs-all	proc		122
-nimgrp	[]=	bitty.html#[]=-procs-all	proc		82
-nimgrp	[]	bitty.html#[]-procs-all	proc		76
-nimgrp	not	bitty.html#not-procs-all	proc		116
-nimgrp	or	bitty.html#or-procs-all	proc		108
-nimgrp	hash	bitty.html#hash-procs-all	proc		155
+nim	unsafeGet	bitty.html#unsafeGet,BitArray,int	proc unsafeGet(b: BitArray; i: int): bool		39
+nim	unsafeSetFalse	bitty.html#unsafeSetFalse,BitArray,int	proc unsafeSetFalse(b: BitArray; i: int)		47
+nim	unsafeSetTrue	bitty.html#unsafeSetTrue,BitArray,int	proc unsafeSetTrue(b: BitArray; i: int)		55
+nim	trueIndexes	bitty.html#trueIndexes.i,BitArray	iterator trueIndexes(b: BitArray): int		63
+nim	`[]`	bitty.html#[],BitArray,int	proc `[]`(b: BitArray; i: int): bool		79
+nim	`[]=`	bitty.html#[]=,BitArray,int,bool	proc `[]=`(b: BitArray; i: int; v: bool)		85
+nim	`==`	bitty.html#==,BitArray,BitArray	proc `==`(a, b: BitArray): bool		94
+nim	`and`	bitty.html#and,BitArray,BitArray	proc `and`(a, b: BitArray): BitArray		103
+nim	`or`	bitty.html#or,BitArray,BitArray	proc `or`(a, b: BitArray): BitArray		111
+nim	`not`	bitty.html#not,BitArray	proc `not`(a: BitArray): BitArray		119
+nim	`$`	bitty.html#$,BitArray	proc `$`(b: BitArray): string		125
+nim	add	bitty.html#add,BitArray,bool	proc add(b: BitArray; v: bool)		134
+nim	count	bitty.html#count,BitArray	proc count(b: BitArray): int		148
+nim	clear	bitty.html#clear,BitArray	proc clear(b: BitArray)		153
+nim	hash	bitty.html#hash,BitArray	proc hash(b: BitArray): Hash		158
+nim	items	bitty.html#items.i,BitArray	iterator items(b: BitArray): bool		162
+nim	pairs	bitty.html#pairs.i,BitArray	iterator pairs(b: BitArray): (int, bool)		166
+nim	BitArray2d	bitty.html#BitArray2d	type BitArray2d		170
+nim	newBitArray2d	bitty.html#newBitArray2d,int,int	proc newBitArray2d(stride, len: int): BitArray2d		175
+nim	`[]`	bitty.html#[],BitArray2d,int,int	proc `[]`(b: BitArray2d; x, y: int): bool		181
+nim	`[]=`	bitty.html#[]=,BitArray2d,int,int,bool	proc `[]=`(b: BitArray2d; x, y: int; v: bool)		184
+nim	`and`	bitty.html#and,BitArray2d,BitArray2d	proc `and`(a, b: BitArray2d): BitArray2d		187
+nim	`or`	bitty.html#or,BitArray2d,BitArray2d	proc `or`(a, b: BitArray2d): BitArray2d		193
+nim	`not`	bitty.html#not,BitArray2d	proc `not`(a: BitArray2d): BitArray2d		199
+nim	`==`	bitty.html#==,BitArray2d,BitArray2d	proc `==`(a, b: BitArray2d): bool		205
+nim	hash	bitty.html#hash,BitArray2d	proc hash(b: BitArray2d): Hash		209
+nim	`$`	bitty.html#$,BitArray2d	proc `$`(b: BitArray2d): string		213
+nimgrp	==	bitty.html#==-procs-all	proc		94
+nimgrp	and	bitty.html#and-procs-all	proc		103
+nimgrp	$	bitty.html#$-procs-all	proc		125
+nimgrp	[]=	bitty.html#[]=-procs-all	proc		85
+nimgrp	[]	bitty.html#[]-procs-all	proc		79
+nimgrp	not	bitty.html#not-procs-all	proc		119
+nimgrp	or	bitty.html#or-procs-all	proc		111
+nimgrp	hash	bitty.html#hash-procs-all	proc		158
