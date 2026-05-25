@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>src/bitty</title>
+<title>bitty</title>
 
 <!-- Google fonts -->
 <link href='https://fonts.googleapis.com/css?family=Lato:400,600,900' rel='stylesheet' type='text/css'/>
@@ -16,15 +16,18 @@
 <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJTUUH4QQQEwksSS9ZWwAAAk1JREFUWMPtll2ITVEUx39nn/O7Y5qR8f05wtCUUr6ZIS++8pEnkZInPImneaCQ5METNdOkeFBKUhMPRIkHKfEuUZSUlGlKPN2TrgfncpvmnntnmlEyq1Z7t89/rf9a6+y99oZxGZf/XeIq61EdtgKXgdXA0xrYAvBjOIF1AI9zvjcC74BSpndrJPkBWDScTF8Aa4E3wDlgHbASaANmVqlcCnwHvgDvgVfAJ+AikAAvgfVZwLnSVZHZaOuKoQi3ZOMi4NkYkpe1p4J7A8BpYAD49hfIy/oqG0+hLomiKP2L5L+1ubn5115S+3OAn4EnwBlgMzCjyt6ZAnQCJ4A7wOs88iRJHvw50HoujuPBoCKwHWiosy8MdfZnAdcHk8dxXFJ3VQbQlCTJvRBCGdRbD4M6uc5glpY3eAihpN5S5w12diSEcCCEcKUO4ljdr15T76ur1FDDLIQQ3qv71EdDOe3Kxj3leRXyk+pxdWnFWod6Wt2bY3de3aSuUHcPBVimHs7mK9WrmeOF6lR1o9qnzskh2ar2qm1qizpfXaPeVGdlmGN5pb09qMxz1Xb1kLqgzn1RyH7JUXW52lr5e/Kqi9qpto7V1atuUzfnARrV7jEib1T76gG2qxdGmXyiekkt1GswPTtek0aBfJp6YySGBfWg2tPQ0FAYgf1stUfdmdcjarbYJEniKIq6gY/Aw+zWHAC+p2labGpqiorFYgGYCEzN7oQdQClN07O1/EfDyGgC0ALMBdYAi4FyK+4H3gLPsxfR1zRNi+NP7nH5J+QntnXe5B5mpfQAAAAASUVORK5CYII=">
 
 <!-- CSS -->
-<link rel="stylesheet" type="text/css" href="nimdoc.out.css?v=2.2.6">
+<link rel="stylesheet" type="text/css" href="nimdoc.out.css?v=2.2.10">
 
 <!-- JS -->
-<script type="text/javascript" src="dochack.js?v=2.2.6"></script>
+<script type="text/javascript" src="dochack.js?v=2.2.10"></script>
 </head>
 <body>
   <div class="document" id="documentId">
+    <input type="checkbox" id="nav-toggle" hidden>
+    <label for="nav-toggle" id="nav-burger">&#9776;</label>
+    <label for="nav-toggle" id="nav-overlay"></label>
     <div class="container">
-      <h1 class="title">src/bitty</h1>
+      <h1 class="title">bitty</h1>
       <div class="row">
   <div class="three columns">
     <div class="theme-select-wrapper">
@@ -185,7 +188,7 @@
   <h1><a class="toc-backref" href="#7">Types</a></h1>
   <dl class="item">
     <div id="BitArray">
-  <dt><pre><a href="bitty.html#BitArray"><span class="Identifier">BitArray</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span>
+  <dt><pre><a href="#BitArray"><span class="Identifier">BitArray</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span>
   <span class="Identifier">len</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
   <dd>
     
@@ -196,7 +199,7 @@
   </dd>
 </div>
 <div id="BitArray2d">
-  <dt><pre><a href="bitty.html#BitArray2d"><span class="Identifier">BitArray2d</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span></pre></dt>
+  <dt><pre><a href="#BitArray2d"><span class="Identifier">BitArray2d</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span></pre></dt>
   <dd>
     
     Creates an array of bits all packed in together.
@@ -213,7 +216,7 @@
   <dl class="item">
     <div id="$-procs-all">
   <div id="$,BitArray">
-  <dt><pre><span class="Keyword">func</span> <a href="#%24%2CBitArray"><span class="Identifier">`$`</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="bitty.html#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dt><pre><span class="Keyword">func</span> <a href="#%24%2CBitArray"><span class="Identifier">`$`</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
     Turns the bit array into a string.
@@ -223,7 +226,7 @@
   </dd>
 </div>
 <div id="$,BitArray2d">
-  <dt><pre><span class="Keyword">func</span> <a href="#%24%2CBitArray2d"><span class="Identifier">`$`</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="bitty.html#BitArray2d"><span class="Identifier">BitArray2d</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dt><pre><span class="Keyword">func</span> <a href="#%24%2CBitArray2d"><span class="Identifier">`$`</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="#BitArray2d"><span class="Identifier">BitArray2d</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
     Turns the bit array into a string.
@@ -236,7 +239,7 @@
 </div>
 <div id="==-procs-all">
   <div id="==,BitArray,BitArray">
-  <dt><pre><span class="Keyword">func</span> <a href="#%3D%3D%2CBitArray%2CBitArray"><span class="Identifier">`==`</span></a><span class="Other">(</span><span class="Identifier">a</span><span class="Other">,</span> <span class="Identifier">b</span><span class="Other">:</span> <a href="bitty.html#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dt><pre><span class="Keyword">func</span> <a href="#%3D%3D%2CBitArray%2CBitArray"><span class="Identifier">`==`</span></a><span class="Other">(</span><span class="Identifier">a</span><span class="Other">,</span> <span class="Identifier">b</span><span class="Other">:</span> <a href="#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
     Are two bit arrays the same.
@@ -246,7 +249,7 @@
   </dd>
 </div>
 <div id="==,BitArray2d,BitArray2d">
-  <dt><pre><span class="Keyword">func</span> <a href="#%3D%3D%2CBitArray2d%2CBitArray2d"><span class="Identifier">`==`</span></a><span class="Other">(</span><span class="Identifier">a</span><span class="Other">,</span> <span class="Identifier">b</span><span class="Other">:</span> <a href="bitty.html#BitArray2d"><span class="Identifier">BitArray2d</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dt><pre><span class="Keyword">func</span> <a href="#%3D%3D%2CBitArray2d%2CBitArray2d"><span class="Identifier">`==`</span></a><span class="Other">(</span><span class="Identifier">a</span><span class="Other">,</span> <span class="Identifier">b</span><span class="Other">:</span> <a href="#BitArray2d"><span class="Identifier">BitArray2d</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
     Are two bit arrays the same.
@@ -259,7 +262,7 @@
 </div>
 <div id="[]-procs-all">
   <div id="[],BitArray2d,int,int">
-  <dt><pre><span class="Keyword">func</span> <a href="#%5B%5D%2CBitArray2d%2Cint%2Cint"><span class="Identifier">`[]`</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="bitty.html#BitArray2d"><span class="Identifier">BitArray2d</span></a><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dt><pre><span class="Keyword">func</span> <a href="#%5B%5D%2CBitArray2d%2Cint%2Cint"><span class="Identifier">`[]`</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="#BitArray2d"><span class="Identifier">BitArray2d</span></a><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
     
@@ -269,7 +272,7 @@
   </dd>
 </div>
 <div id="[],BitArray,int">
-  <dt><pre><span class="Keyword">func</span> <a href="#%5B%5D%2CBitArray%2Cint"><span class="Identifier">`[]`</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="bitty.html#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">;</span> <span class="Identifier">i</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dt><pre><span class="Keyword">func</span> <a href="#%5B%5D%2CBitArray%2Cint"><span class="Identifier">`[]`</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">;</span> <span class="Identifier">i</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
     Access a single bit.
@@ -282,7 +285,7 @@
 </div>
 <div id="[]=-procs-all">
   <div id="[]=,BitArray2d,int,int,bool">
-  <dt><pre><span class="Keyword">func</span> <a href="#%5B%5D%3D%2CBitArray2d%2Cint%2Cint%2Cbool"><span class="Identifier">`[]=`</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="bitty.html#BitArray2d"><span class="Identifier">BitArray2d</span></a><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">v</span><span class="Other">:</span> <span class="Identifier">bool</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">func</span> <a href="#%5B%5D%3D%2CBitArray2d%2Cint%2Cint%2Cbool"><span class="Identifier">`[]=`</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="#BitArray2d"><span class="Identifier">BitArray2d</span></a><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">v</span><span class="Other">:</span> <span class="Identifier">bool</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -293,7 +296,7 @@
   </dd>
 </div>
 <div id="[]=,BitArray,int,bool">
-  <dt><pre><span class="Keyword">func</span> <a href="#%5B%5D%3D%2CBitArray%2Cint%2Cbool"><span class="Identifier">`[]=`</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="bitty.html#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">;</span> <span class="Identifier">i</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">v</span><span class="Other">:</span> <span class="Identifier">bool</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dt><pre><span class="Keyword">func</span> <a href="#%5B%5D%3D%2CBitArray%2Cint%2Cbool"><span class="Identifier">`[]=`</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">;</span> <span class="Identifier">i</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">v</span><span class="Other">:</span> <span class="Identifier">bool</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
     
@@ -306,7 +309,7 @@
 </div>
 <div id="add-procs-all">
   <div id="add,BitArray,bool">
-  <dt><pre><span class="Keyword">func</span> <a href="#add%2CBitArray%2Cbool"><span class="Identifier">add</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="bitty.html#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">;</span> <span class="Identifier">v</span><span class="Other">:</span> <span class="Identifier">bool</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dt><pre><span class="Keyword">func</span> <a href="#add%2CBitArray%2Cbool"><span class="Identifier">add</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">;</span> <span class="Identifier">v</span><span class="Other">:</span> <span class="Identifier">bool</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
     Add a bit to the end of the array.
@@ -319,7 +322,7 @@
 </div>
 <div id="and-procs-all">
   <div id="and,BitArray,BitArray">
-  <dt><pre><span class="Keyword">func</span> <a href="#and%2CBitArray%2CBitArray"><span class="Identifier">`and`</span></a><span class="Other">(</span><span class="Identifier">a</span><span class="Other">,</span> <span class="Identifier">b</span><span class="Other">:</span> <a href="bitty.html#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">)</span><span class="Other">:</span> <a href="bitty.html#BitArray"><span class="Identifier">BitArray</span></a> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">func</span> <a href="#and%2CBitArray%2CBitArray"><span class="Identifier">`and`</span></a><span class="Other">(</span><span class="Identifier">a</span><span class="Other">,</span> <span class="Identifier">b</span><span class="Other">:</span> <a href="#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">)</span><span class="Other">:</span> <a href="#BitArray"><span class="Identifier">BitArray</span></a> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
                                        <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -330,7 +333,7 @@
   </dd>
 </div>
 <div id="and,BitArray2d,BitArray2d">
-  <dt><pre><span class="Keyword">func</span> <a href="#and%2CBitArray2d%2CBitArray2d"><span class="Identifier">`and`</span></a><span class="Other">(</span><span class="Identifier">a</span><span class="Other">,</span> <span class="Identifier">b</span><span class="Other">:</span> <a href="bitty.html#BitArray2d"><span class="Identifier">BitArray2d</span></a><span class="Other">)</span><span class="Other">:</span> <a href="bitty.html#BitArray2d"><span class="Identifier">BitArray2d</span></a> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">func</span> <a href="#and%2CBitArray2d%2CBitArray2d"><span class="Identifier">`and`</span></a><span class="Other">(</span><span class="Identifier">a</span><span class="Other">,</span> <span class="Identifier">b</span><span class="Other">:</span> <a href="#BitArray2d"><span class="Identifier">BitArray2d</span></a><span class="Other">)</span><span class="Other">:</span> <a href="#BitArray2d"><span class="Identifier">BitArray2d</span></a> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -344,7 +347,7 @@
 </div>
 <div id="clear-procs-all">
   <div id="clear,BitArray">
-  <dt><pre><span class="Keyword">func</span> <a href="#clear%2CBitArray"><span class="Identifier">clear</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="bitty.html#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dt><pre><span class="Keyword">func</span> <a href="#clear%2CBitArray"><span class="Identifier">clear</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
     Unsets all of the bits.
@@ -357,7 +360,7 @@
 </div>
 <div id="count-procs-all">
   <div id="count,BitArray">
-  <dt><pre><span class="Keyword">func</span> <a href="#count%2CBitArray"><span class="Identifier">count</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="bitty.html#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dt><pre><span class="Keyword">func</span> <a href="#count%2CBitArray"><span class="Identifier">count</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
     Returns the number of bits set.
@@ -370,7 +373,7 @@
 </div>
 <div id="firstFalse-procs-all">
   <div id="firstFalse,BitArray">
-  <dt><pre><span class="Keyword">func</span> <a href="#firstFalse%2CBitArray"><span class="Identifier">firstFalse</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="bitty.html#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Other">(</span><span class="Identifier">bool</span><span class="Other">,</span> <span class="Identifier">int</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dt><pre><span class="Keyword">func</span> <a href="#firstFalse%2CBitArray"><span class="Identifier">firstFalse</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Other">(</span><span class="Identifier">bool</span><span class="Other">,</span> <span class="Identifier">int</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
     
@@ -383,7 +386,7 @@
 </div>
 <div id="hash-procs-all">
   <div id="hash,BitArray">
-  <dt><pre><span class="Keyword">func</span> <a href="#hash%2CBitArray"><span class="Identifier">hash</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="bitty.html#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Hash</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dt><pre><span class="Keyword">func</span> <a href="#hash%2CBitArray"><span class="Identifier">hash</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Hash</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
     Computes a Hash for the bit array.
@@ -393,7 +396,7 @@
   </dd>
 </div>
 <div id="hash,BitArray2d">
-  <dt><pre><span class="Keyword">func</span> <a href="#hash%2CBitArray2d"><span class="Identifier">hash</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="bitty.html#BitArray2d"><span class="Identifier">BitArray2d</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Hash</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dt><pre><span class="Keyword">func</span> <a href="#hash%2CBitArray2d"><span class="Identifier">hash</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="#BitArray2d"><span class="Identifier">BitArray2d</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Hash</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
     Computes a Hash for the bit array.
@@ -406,7 +409,7 @@
 </div>
 <div id="newBitArray-procs-all">
   <div id="newBitArray,int">
-  <dt><pre><span class="Keyword">func</span> <a href="#newBitArray%2Cint"><span class="Identifier">newBitArray</span></a><span class="Other">(</span><span class="Identifier">len</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">)</span><span class="Other">:</span> <a href="bitty.html#BitArray"><span class="Identifier">BitArray</span></a> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dt><pre><span class="Keyword">func</span> <a href="#newBitArray%2Cint"><span class="Identifier">newBitArray</span></a><span class="Other">(</span><span class="Identifier">len</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">)</span><span class="Other">:</span> <a href="#BitArray"><span class="Identifier">BitArray</span></a> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
     Create a new bit array.
@@ -419,7 +422,7 @@
 </div>
 <div id="newBitArray2d-procs-all">
   <div id="newBitArray2d,int,int">
-  <dt><pre><span class="Keyword">func</span> <a href="#newBitArray2d%2Cint%2Cint"><span class="Identifier">newBitArray2d</span></a><span class="Other">(</span><span class="Identifier">stride</span><span class="Other">,</span> <span class="Identifier">len</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <a href="bitty.html#BitArray2d"><span class="Identifier">BitArray2d</span></a> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">func</span> <a href="#newBitArray2d%2Cint%2Cint"><span class="Identifier">newBitArray2d</span></a><span class="Other">(</span><span class="Identifier">stride</span><span class="Other">,</span> <span class="Identifier">len</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <a href="#BitArray2d"><span class="Identifier">BitArray2d</span></a> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -433,7 +436,7 @@
 </div>
 <div id="not-procs-all">
   <div id="not,BitArray">
-  <dt><pre><span class="Keyword">func</span> <a href="#not%2CBitArray"><span class="Identifier">`not`</span></a><span class="Other">(</span><span class="Identifier">a</span><span class="Other">:</span> <a href="bitty.html#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">)</span><span class="Other">:</span> <a href="bitty.html#BitArray"><span class="Identifier">BitArray</span></a> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dt><pre><span class="Keyword">func</span> <a href="#not%2CBitArray"><span class="Identifier">`not`</span></a><span class="Other">(</span><span class="Identifier">a</span><span class="Other">:</span> <a href="#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">)</span><span class="Other">:</span> <a href="#BitArray"><span class="Identifier">BitArray</span></a> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
     Not(s) or inverts a and returns a new bit array.
@@ -443,7 +446,7 @@
   </dd>
 </div>
 <div id="not,BitArray2d">
-  <dt><pre><span class="Keyword">func</span> <a href="#not%2CBitArray2d"><span class="Identifier">`not`</span></a><span class="Other">(</span><span class="Identifier">a</span><span class="Other">:</span> <a href="bitty.html#BitArray2d"><span class="Identifier">BitArray2d</span></a><span class="Other">)</span><span class="Other">:</span> <a href="bitty.html#BitArray2d"><span class="Identifier">BitArray2d</span></a> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dt><pre><span class="Keyword">func</span> <a href="#not%2CBitArray2d"><span class="Identifier">`not`</span></a><span class="Other">(</span><span class="Identifier">a</span><span class="Other">:</span> <a href="#BitArray2d"><span class="Identifier">BitArray2d</span></a><span class="Other">)</span><span class="Other">:</span> <a href="#BitArray2d"><span class="Identifier">BitArray2d</span></a> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
     Not(s) or inverts a and returns a new bit array.
@@ -456,7 +459,7 @@
 </div>
 <div id="or-procs-all">
   <div id="or,BitArray,BitArray">
-  <dt><pre><span class="Keyword">func</span> <a href="#or%2CBitArray%2CBitArray"><span class="Identifier">`or`</span></a><span class="Other">(</span><span class="Identifier">a</span><span class="Other">,</span> <span class="Identifier">b</span><span class="Other">:</span> <a href="bitty.html#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">)</span><span class="Other">:</span> <a href="bitty.html#BitArray"><span class="Identifier">BitArray</span></a> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">func</span> <a href="#or%2CBitArray%2CBitArray"><span class="Identifier">`or`</span></a><span class="Other">(</span><span class="Identifier">a</span><span class="Other">,</span> <span class="Identifier">b</span><span class="Other">:</span> <a href="#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">)</span><span class="Other">:</span> <a href="#BitArray"><span class="Identifier">BitArray</span></a> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
                                       <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -467,7 +470,7 @@
   </dd>
 </div>
 <div id="or,BitArray2d,BitArray2d">
-  <dt><pre><span class="Keyword">func</span> <a href="#or%2CBitArray2d%2CBitArray2d"><span class="Identifier">`or`</span></a><span class="Other">(</span><span class="Identifier">a</span><span class="Other">,</span> <span class="Identifier">b</span><span class="Other">:</span> <a href="bitty.html#BitArray2d"><span class="Identifier">BitArray2d</span></a><span class="Other">)</span><span class="Other">:</span> <a href="bitty.html#BitArray2d"><span class="Identifier">BitArray2d</span></a> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">func</span> <a href="#or%2CBitArray2d%2CBitArray2d"><span class="Identifier">`or`</span></a><span class="Other">(</span><span class="Identifier">a</span><span class="Other">,</span> <span class="Identifier">b</span><span class="Other">:</span> <a href="#BitArray2d"><span class="Identifier">BitArray2d</span></a><span class="Other">)</span><span class="Other">:</span> <a href="#BitArray2d"><span class="Identifier">BitArray2d</span></a> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -481,7 +484,7 @@
 </div>
 <div id="setLen-procs-all">
   <div id="setLen,BitArray,int">
-  <dt><pre><span class="Keyword">func</span> <a href="#setLen%2CBitArray%2Cint"><span class="Identifier">setLen</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="bitty.html#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">;</span> <span class="Identifier">len</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dt><pre><span class="Keyword">func</span> <a href="#setLen%2CBitArray%2Cint"><span class="Identifier">setLen</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">;</span> <span class="Identifier">len</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
     Sets the length.
@@ -494,7 +497,7 @@
 </div>
 <div id="unsafeGet-procs-all">
   <div id="unsafeGet,BitArray,int">
-  <dt><pre><span class="Keyword">func</span> <a href="#unsafeGet%2CBitArray%2Cint"><span class="Identifier">unsafeGet</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="bitty.html#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">;</span> <span class="Identifier">i</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dt><pre><span class="Keyword">func</span> <a href="#unsafeGet%2CBitArray%2Cint"><span class="Identifier">unsafeGet</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">;</span> <span class="Identifier">i</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
     Access a single bit (unchecked).
@@ -507,7 +510,7 @@
 </div>
 <div id="unsafeSetFalse-procs-all">
   <div id="unsafeSetFalse,BitArray,int">
-  <dt><pre><span class="Keyword">func</span> <a href="#unsafeSetFalse%2CBitArray%2Cint"><span class="Identifier">unsafeSetFalse</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="bitty.html#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">;</span> <span class="Identifier">i</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dt><pre><span class="Keyword">func</span> <a href="#unsafeSetFalse%2CBitArray%2Cint"><span class="Identifier">unsafeSetFalse</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">;</span> <span class="Identifier">i</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
     Set a single bit to false (unchecked).
@@ -520,7 +523,7 @@
 </div>
 <div id="unsafeSetTrue-procs-all">
   <div id="unsafeSetTrue,BitArray,int">
-  <dt><pre><span class="Keyword">func</span> <a href="#unsafeSetTrue%2CBitArray%2Cint"><span class="Identifier">unsafeSetTrue</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="bitty.html#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">;</span> <span class="Identifier">i</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dt><pre><span class="Keyword">func</span> <a href="#unsafeSetTrue%2CBitArray%2Cint"><span class="Identifier">unsafeSetTrue</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">;</span> <span class="Identifier">i</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
     Set a single bit to true (unchecked).
@@ -539,7 +542,7 @@
   <dl class="item">
     <div id="items-iterators-all">
   <div id="items.i,BitArray">
-  <dt><pre><span class="Keyword">iterator</span> <a href="#items.i%2CBitArray"><span class="Identifier">items</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="bitty.html#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dt><pre><span class="Keyword">iterator</span> <a href="#items.i%2CBitArray"><span class="Identifier">items</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
     
@@ -552,7 +555,7 @@
 </div>
 <div id="pairs-iterators-all">
   <div id="pairs.i,BitArray">
-  <dt><pre><span class="Keyword">iterator</span> <a href="#pairs.i%2CBitArray"><span class="Identifier">pairs</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="bitty.html#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Other">(</span><span class="Identifier">int</span><span class="Other">,</span> <span class="Identifier">bool</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dt><pre><span class="Keyword">iterator</span> <a href="#pairs.i%2CBitArray"><span class="Identifier">pairs</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Other">(</span><span class="Identifier">int</span><span class="Other">,</span> <span class="Identifier">bool</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
     
@@ -565,7 +568,7 @@
 </div>
 <div id="trueIndexes-iterators-all">
   <div id="trueIndexes.i,BitArray">
-  <dt><pre><span class="Keyword">iterator</span> <a href="#trueIndexes.i%2CBitArray"><span class="Identifier">trueIndexes</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="bitty.html#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dt><pre><span class="Keyword">iterator</span> <a href="#trueIndexes.i%2CBitArray"><span class="Identifier">trueIndexes</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <a href="#BitArray"><span class="Identifier">BitArray</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
     
@@ -586,7 +589,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2025-11-25 21:19:02 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2026-05-25 04:28:08 UTC</small>
       </div>
     </div>
   </div>

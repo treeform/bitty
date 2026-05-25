@@ -1,4 +1,4 @@
-nimTitle	bitty	bitty.html	module src/bitty		0
+nimTitle	bitty	bitty.html	module bitty		0
 nim	BitArray	bitty.html#BitArray	type BitArray		3
 nim	newBitArray	bitty.html#newBitArray,int	proc newBitArray(len: int = 0): BitArray		13
 nim	setLen	bitty.html#setLen,BitArray,int	proc setLen(b: BitArray; len: int)		19
